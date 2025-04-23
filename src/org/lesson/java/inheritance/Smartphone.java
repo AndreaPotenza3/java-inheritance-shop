@@ -7,6 +7,13 @@ public class Smartphone extends Prodotto{
     String codiceImei;
     int memoria;
 
+    public Smartphone(String nome, String marca, BigDecimal prezzo, String codiceImei, int memoria){
+        super(nome, marca, prezzo);
+
+        this.codiceImei = codiceImei;
+        this.memoria = memoria;
+    }
+
     public Smartphone(String nome, String marca, BigDecimal prezzo, BigDecimal iva, String codiceImei, int memoria){
         super(nome, marca, prezzo, iva);
 
@@ -32,7 +39,7 @@ public class Smartphone extends Prodotto{
 
     @Override
     public String toString() {
-        return String.format("L' %s, di %s costa %s euro ed ha una memoria di %d GB." , this.nome, this.marca, this.getPrezzoIva(), this.memoria );
+        return String.format("L' %s, di %s costa %s euro ed ha una memoria di %d GB." , this.nome, this.marca, this.prezzo, this.memoria );
     }
 
 

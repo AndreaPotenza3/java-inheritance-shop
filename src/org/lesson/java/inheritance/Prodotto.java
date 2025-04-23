@@ -12,6 +12,15 @@ public class Prodotto {
     protected BigDecimal prezzo;
     protected BigDecimal iva;
 
+    public Prodotto(String nome, String marca, BigDecimal prezzo) {
+        Random rand = new Random();
+        this.codice = rand.nextInt(99999);
+        this.nome = nome;
+        this.marca = marca;
+        this.prezzo = prezzo;
+
+    }
+
     public Prodotto(String nome, String marca, BigDecimal prezzo, BigDecimal iva) {
         Random rand = new Random();
         this.codice = rand.nextInt(99999);
@@ -77,13 +86,15 @@ public class Prodotto {
     public BigDecimal getPrezzoIva() {
          if (prezzo != null && iva != null) {
             return prezzo.add(prezzo.multiply(iva).divide(new BigDecimal(100)).setScale(2, RoundingMode.DOWN));
-        }
+        } 
         return null;
     }
 
     @Override
     public String toString() {
-        return String.format("Le Cuffie %s, di %s costano %s" , this.nome, this.marca, this.getPrezzoIva());
+        
+            return String.format("Le Cuffie %s, di %s costano %s" , this.nome, this.marca, this.getPrezzoIva());
+   
     }
 
 }

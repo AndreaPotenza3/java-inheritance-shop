@@ -7,10 +7,18 @@ public class Televisore extends Prodotto{
     protected int dimensioni;
     protected Boolean isSmart; 
 
+    public Televisore(String nome, String marca, BigDecimal prezzo, int dimensioni, Boolean isSmart){
+        super(nome, marca, prezzo);
+
+        this.dimensioni = dimensioni;
+        this.isSmart = isSmart;
+    }
+
     public Televisore(String nome, String marca, BigDecimal prezzo, BigDecimal iva, int dimensioni, Boolean isSmart){
         super(nome, marca, prezzo, iva);
 
         this.dimensioni = dimensioni;
+        this.isSmart = isSmart;
     }
 
     public int getDimensione() {
@@ -36,7 +44,7 @@ public class Televisore extends Prodotto{
 
     @Override
     public String toString() {
-        return String.format("La TV %s, di %s costa %s euro, con uno schermo %s pollici ed %s." , this.nome, this.marca, this.getPrezzoIva(), this.dimensioni, this.getIsSmart());
+        return String.format("La TV %s, di %s costa %s euro, con uno schermo %s pollici ed %s." , this.nome, this.marca, this.prezzo, this.dimensioni, this.getIsSmart());
     }
 
 }
