@@ -22,5 +22,10 @@ public static void main(String[] args) {
     System.out.println(samsung.getIsSmart());
     System.out.println(samsung.getDimensione());
 
+    Smartphone iphone = new Smartphone("Iphone 8", "Apple", new BigDecimal(799), new BigDecimal(23), "192837461827364", 256);
+
+    iphone.setMemoria(512);
+    System.out.println(iphone.getMemoria());
+
 }
 }
