@@ -30,5 +30,10 @@ public class Smartphone extends Prodotto{
         this.memoria = memoria;
     }
 
+    @Override
+    public String toString() {
+        return String.format("L' %s, di %s costa %s euro ed ha una memoria di %d GB." , this.nome, this.marca, this.getPrezzoIva(), this.memoria );
+    }
+
 
 }

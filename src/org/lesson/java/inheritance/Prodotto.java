@@ -1,6 +1,7 @@
 package org.lesson.java.inheritance;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Random;
 
 public class Prodotto {
@@ -56,9 +57,9 @@ public class Prodotto {
         return null;
     }
 
-    public void getPrezzo(BigDecimal prezzo) {
+    public void setPrezzo(BigDecimal prezzo) {
         
-        this.prezzo = prezzo;
+        this.prezzo = prezzo.setScale(2, RoundingMode.DOWN);
     }
 
     public BigDecimal getIva() {
@@ -71,6 +72,18 @@ public class Prodotto {
     public void setIva(BigDecimal iva) {
         
         this.iva = iva;
+    }
+
+    public BigDecimal getPrezzoIva() {
+         if (prezzo != null && iva != null) {
+            return prezzo.add(prezzo.multiply(iva).divide(new BigDecimal(100)).setScale(2, RoundingMode.DOWN));
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Le Cuffie %s, di %s costano %s" , this.nome, this.marca, this.getPrezzoIva());
     }
 
 }
