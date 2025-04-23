@@ -25,7 +25,13 @@ public static void main(String[] args) {
     Smartphone iphone = new Smartphone("Iphone 8", "Apple", new BigDecimal(799), new BigDecimal(23), "192837461827364", 256);
 
     iphone.setMemoria(512);
+    System.out.println(iphone.getNome());
     System.out.println(iphone.getMemoria());
 
+    Cuffie airBuds = new Cuffie("Air Buds 2", "Samsung", new BigDecimal(129.99), new BigDecimal(23), "Nero", true);
+
+    airBuds.setColore("Bianco");
+    System.out.println(airBuds.getNome());
+    System.out.println(airBuds.getColore());
 }
 }
